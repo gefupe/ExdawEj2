@@ -1,0 +1,23 @@
+services:
+  db:
+    image: gefupe/sqlconcesionario:v1
+    container_name: contenedorslqconcesionario
+    ports:
+      - "3306:3306"
+  php:
+    image: gefupe/phpconcesionario:v1
+    container_name: contenedorphpconcesionario
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: contenedorPhpMyAdmin
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: contrasenyaRoot
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
