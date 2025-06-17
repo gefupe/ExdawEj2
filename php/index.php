@@ -8,7 +8,7 @@ $dbname = "concesionario";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+    die("Conexión fallida wwasd: " . $conn->connect_error);
 }
 
 // Obtener los coches
